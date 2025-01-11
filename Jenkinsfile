@@ -3,7 +3,8 @@ pipeline {
     stages {
          stage('Listing') {
             steps { 
-                echo 'Cloning addressbook git-repo'
+                echo 'Cloning addressbook git-repo for test'
+                git 'https://github.com/kavanashreedhar/addressbook.git'
             }
         }
         stage('Compile') {
