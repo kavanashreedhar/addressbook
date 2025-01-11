@@ -1,11 +1,17 @@
 pipeline {
     agent any
+    
+    parameters {
+  string defaultValue: '10', name: 'BUILD_NO'
+}
+
 
     stages {
         stage('gitjob') {
             steps {
-                echo 'Cloning addressbook git-repo'
+                echo 'Cloning addressbook from git-repo'
                 git 'https://github.com/kavanashreedhar/addressbook.git'
+                echo '$BUILD_NO'
             }
         }
         stage('buildjob') {
