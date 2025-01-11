@@ -1,13 +1,7 @@
 pipeline {
     agent any
     stages {
-         stage('Listing') {
-            steps { 
-                echo 'Cloning addressbook git-repo for test'
-                git 'https://github.com/kavanashreedhar/addressbook.git'
-            }
-        }
-        stage('Compile') {
+         stage('Compile') {
             steps { 
                 sh 'mvn compile'
             }
